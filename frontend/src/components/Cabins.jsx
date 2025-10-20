@@ -5,7 +5,7 @@ export default function Cabins() {
   return (
     <section id="cabins" className="bg-[#fdf8f3] py-12 px-6">
       <div className="text-center max-w-4xl mx-auto mb-10">
-        <h2 className="text-4xl font-bold text-gradient bg-gradient-to-r from-[#a86e3c] via-[#c88b5c] to-[#a86e3c] bg-clip-text text-transparent mb-2">
+        <h2 className="text-4xl font-bold leading-tight text-gradient bg-gradient-to-r from-[#a86e3c] via-[#c88b5c] to-[#a86e3c] bg-clip-text text-transparent mb-2">
           Luxury Cabins & Cruise Packages
         </h2>
         <div className="h-1 w-24 mx-auto mt-6 bg-gradient-to-r from-[#d4a373] via-[#e3b88e] to-[#d4a373] rounded-full"></div>

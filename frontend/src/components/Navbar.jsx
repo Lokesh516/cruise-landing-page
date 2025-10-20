@@ -37,7 +37,7 @@ export default function Navbar() {
 
             <a
               href="#enquiry"
-              className="hidden md:inline-block bg-yellow-400 text-white px-4 py-2 rounded font-semibold hover:bg-yellow-300"
+              className="hidden md:inline-block bg-[#C8A97E] text-white px-4 py-2 rounded font-semibold hover:bg-yellow-300"
             >
               ENQUIRE NOW
             </a>
@@ -63,7 +63,7 @@ export default function Navbar() {
               <a href="#cabins" className="block text-white hover:text-yellow-400">Cabins</a>
               <a href="#gallery" className="block text-white hover:text-yellow-400">Gallery</a>
               <a href="#testimonials" className="block text-white hover:text-yellow-400">Testimonials</a>
-              <a href="#enquiry" className="block bg-[#c9a074] text-white px-4 py-2 rounded font-semibold hover:bg-yellow-300">
+              <a href="#enquiry" className="block bg-[#C8A97E]  text-white px-4 py-2 rounded font-semibold hover:bg-[#D2B48C]">
                 ENQUIRE NOW
               </a>
             </div>
