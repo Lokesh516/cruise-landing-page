@@ -61,17 +61,17 @@ Includes a dynamic enquiry form that sends submissions directly to your email us
 
 You can use the sample Gmail account below to test the enquiry form:
 
-// SMTP Configuration (Sample Account)
-$mail->isSMTP();
-$mail->Host = 'smtp.gmail.com';
-$mail->SMTPAuth = true;
-$mail->Username = 'karma.cruise.info@gmail.com'; // Sample email created for testing
-$mail->Password = 'womdcgbflnmajovq';           // App password for testing only
-$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-$mail->Port = 587;
+// SMTP Configuration (Sample Account)  
+$mail->isSMTP();  
+$mail->Host = 'smtp.gmail.com';  
+$mail->SMTPAuth = true;  
+$mail->Username = 'karma.cruise.info@gmail.com'; // Sample email created for testing  
+$mail->Password = 'womdcgbflnmajovq';           // App password for testing only  
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;  
+$mail->Port = 587;  
 
-// Receiver email — change this to your own inbox
-$mail->addAddress('your-email@example.com'); 
+// Receiver email — change this to your own inbox  
+$mail->addAddress('your-email@example.com');  
 
 
 ⚠️ Note:
