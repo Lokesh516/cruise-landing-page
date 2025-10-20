@@ -44,12 +44,12 @@ Includes a dynamic enquiry form that sends submissions directly to your email us
 | Last Name | Text | Required |
 | Email | Email | Required |
 | Phone | Input with country code | Required |
-| Date of Birth | Date | Optional |
-| Marital Status | Dropdown | Optional |
-| Passport | Text | Optional |
+| Date of Birth | Date | Required |
+| Marital Status | Dropdown | Required |
+| Passport | Text | Required |
 | Package | Dropdown | Required |
 | Message | Textarea | Optional |
-| Consent | Checkbox | Required |
+| Consent | Checkbox | optional |
 
 ---
 
