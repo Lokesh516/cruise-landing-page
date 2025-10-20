@@ -45,14 +45,14 @@ try {
   $consent2      = (!empty($_POST['consent2']) && $_POST['consent2'] === 'true') ? 'Yes' : 'No';
 
   // Email Headers
-  // Sender email and name
+  // Sender email and name (you can keep this for testing or replace with your own)
   $mail->setFrom('karma.cruise.info@gmail.com', 'Karma Cruise Enquiry');
 
   // Reply goes to the user who submitted the form
   $mail->addReplyTo($email, "$firstName $lastName"); 
 
-  // Receiver email where enquiries are sent
-  $mail->addAddress('lokeshyadav31290@gmail.com');
+  // Recipient email address — replace this with your own to receive form submissions
+  $mail->addAddress('receiver@example.com');
 
   // Email Content
   $mail->Subject = 'New Cruise Enquiry';
