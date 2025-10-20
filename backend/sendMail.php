@@ -9,9 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
   exit();
 }
 
-//require __DIR__ . '/../vendor/autoload.php'; // Composer autoload
 require __DIR__ . '/vendor/autoload.php';
-
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -23,32 +21,40 @@ $mail = new PHPMailer(true);
 try {
   // SMTP Configuration
   $mail->isSMTP();
-  $mail->Host = 'smtp.gmail.com';       // e.g., smtp.gmail.com
+  $mail->Host = 'smtp.gmail.com';
   $mail->SMTPAuth = true;
-  $mail->Username = 'lokeshyadav31290@gmail.com';          // Your SMTP username
-  $mail->Password = 'jvis wyhb ohwp adzc';            // Your SMTP password
-  $mail->SMTPSecure = 'tls';                   // Or 'ssl'
-  $mail->Port = 587;                           // Or 465 for SSL
+  $mail->Username = 'karma.cruise.info@gmail.com';
+  $mail->Password = 'womdcgbflnmajovq';             
+  $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+  $mail->Port = 587;
 
   // Form Data
   $firstName     = $_POST['firstName'] ?? '';
   $lastName      = $_POST['lastName'] ?? '';
   $email         = $_POST['email'] ?? '';
-  $phone = $_POST['phone'] ?? '';
-if ($phone && strpos($phone, '+') !== 0) {
-  $phone = '+' . $phone;
-}
+  $phone         = $_POST['phone'] ?? '';
+  if ($phone && strpos($phone, '+') !== 0) {
+    $phone = '+' . $phone;
+  }
   $dob           = $_POST['dob'] ?? '';
   $maritalStatus = $_POST['maritalStatus'] ?? '';
   $passport      = $_POST['passport'] ?? '';
   $package       = $_POST['package'] ?? '';
   $message       = $_POST['message'] ?? '';
-  $consent1      = isset($_POST['consent1']) ? 'Yes' : 'No';
-  $consent2      = isset($_POST['consent2']) ? 'Yes' : 'No';
+  $consent1      = (!empty($_POST['consent1']) && $_POST['consent1'] === 'true') ? 'Yes' : 'No';
+  $consent2      = (!empty($_POST['consent2']) && $_POST['consent2'] === 'true') ? 'Yes' : 'No';
+
+  // Email Headers
+  // Sender email and name
+  $mail->setFrom('karma.cruise.info@gmail.com', 'Karma Cruise Enquiry');
+
+  // Reply goes to the user who submitted the form
+  $mail->addReplyTo($email, "$firstName $lastName"); 
+
+  // Receiver email where enquiries are sent
+  $mail->addAddress('lokeshyadav31290@gmail.com');
 
   // Email Content
-  $mail->setFrom($email, "$firstName $lastName");
-  $mail->addAddress('lokeshyadav31290@gmail.com'); // Receiver
   $mail->Subject = 'New Cruise Enquiry';
   $mail->Body = <<<EOT
 New enquiry received:

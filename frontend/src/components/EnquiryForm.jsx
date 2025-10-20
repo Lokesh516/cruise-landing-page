@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import {
   UserIcon,
@@ -9,7 +10,8 @@ import {
 } from '@heroicons/react/24/solid';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
-import { parsePhoneNumber } from 'libphonenumber-js';
+import { parsePhoneNumberWithError } from 'libphonenumber-js';
+
 
 export default function EnquiryForm() {
   const [formData, setFormData] = useState({
@@ -34,9 +36,11 @@ export default function EnquiryForm() {
     if (!emailRegex.test(formData.email)) newErrors.email = 'Invalid email address';
 
     try {
-      const phone = parsePhoneNumber('+' + formData.phone);
-      if (!phone.isValid()) newErrors.phone = 'Invalid phone number';
-    } catch {
+      const phone = parsePhoneNumberWithError('+' + formData.phone);
+      if (!phone.isValid()) {
+        newErrors.phone = 'Invalid phone number';
+      }
+    } catch (error) {
       newErrors.phone = 'Invalid phone number format';
     }
 
@@ -67,7 +71,6 @@ export default function EnquiryForm() {
       });
       const result = await res.json();
       alert(result.success ? 'Submitted successfully!' : 'Submission failed.');
-      // eslint-disable-next-line no-unused-vars
     } catch (error) {
       alert('Submission failed. Please try again.');
     }
