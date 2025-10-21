@@ -98,10 +98,12 @@ npm run dev
 ```
 
 ### 3️⃣ Setup Backend (PHP Server)
-- Copy the `backend` folder to your PHP server directory (e.g., `htdocs` for XAMPP).
-- Run Apache from your local server (e.g., XAMPP Control Panel).
-- Ensure `sendMail.php` is accessible via:  
-  `http://localhost/cruise-landing-page/backend/sendMail.php`
+- Make sure the entire `cruise-landing-page` folder is placed inside your PHP server directory (e.g., `htdocs` for XAMPP).
+- The folder structure should look like:
+  C:\xampp\htdocs\cruise-landing-page\backend\sendMail.php
+- Run Apache from XAMPP Control Panel.
+- Access the backend via:
+  http://localhost/cruise-landing-page/backend/sendMail.php
 
 ### 4️⃣ Test Form Submission
 - Fill out the enquiry form and submit.
