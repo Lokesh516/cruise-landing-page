@@ -97,7 +97,18 @@ npm install
 npm run dev
 ```
 
-### 3️⃣ Setup Backend (PHP Server)
+### 3️⃣ Install Backend Dependencies
+Navigate to the backend folder:
+```bash
+cd ../backend
+```
+
+Install PHPMailer using Composer:
+```bash
+composer install
+```
+
+#### 4️⃣ Setup Backend (PHP Server)
 - Make sure the entire `cruise-landing-page` folder is placed inside your PHP server directory (e.g., `htdocs` for XAMPP).
 - The folder structure should look like:
   C:\xampp\htdocs\cruise-landing-page\backend\sendMail.php
@@ -105,7 +116,7 @@ npm run dev
 - Access the backend via:
   http://localhost/cruise-landing-page/backend/sendMail.php
 
-### 4️⃣ Test Form Submission
+### 5️⃣ Test Form Submission
 - Fill out the enquiry form and submit.
 - Check your inbox for the email notification.
 
